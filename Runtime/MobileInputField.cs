@@ -194,7 +194,7 @@ namespace Mopsicus.Plugins {
         private void Awake () {
             _inputObject = this.GetComponent<InputField> ();
             if ((object) _inputObject == null) {
-                Debug.LogError (string.Format ("No found InputField for {0} MobileInput", this.name));
+                // Debug.LogError (string.Format ("No found InputField for {0} MobileInput", this.name));
                 throw new MissingComponentException ();
             }
             _inputObjectText = _inputObject.textComponent;

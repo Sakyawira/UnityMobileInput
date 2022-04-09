@@ -100,7 +100,7 @@ namespace Mopsicus.Plugins {
 #if UNITY_IOS
             pluginsInit (data.ToJsonString ());
 #endif
-            Debug.Log ("Plugins init");
+            // Debug.Log ("Plugins init");
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Mopsicus.Plugins {
         /// </summary>
         /// <param name="data">data from plugin</param>
         void OnDataReceive (string data) {
-            Debug.Log ("Plugins receive data: " + data);
+            // Debug.Log ("Plugins receive data: " + data);
             try {
                 JsonObject info = (JsonObject) JsonNode.ParseJsonString (data);
                 if (_plugins.ContainsKey (info["name"])) {
@@ -119,10 +119,10 @@ namespace Mopsicus.Plugins {
                         plugin.OnData (info);
                     }
                 } else {
-                    Debug.LogError (string.Format ("{0} plugin does not exists", info["name"]));
+                    // Debug.LogError (string.Format ("{0} plugin does not exists", info["name"]));
                 }
             } catch (Exception e) {
-                Debug.LogError (string.Format ("Plugins receive error: {0}, stack: {1}", e.Message, e.StackTrace));
+                // Debug.LogError (string.Format ("Plugins receive error: {0}, stack: {1}", e.Message, e.StackTrace));
             }
 
         }

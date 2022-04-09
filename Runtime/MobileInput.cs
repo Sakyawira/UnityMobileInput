@@ -164,7 +164,7 @@ namespace Mopsicus.Plugins {
         /// Callback on data
         /// </summary>
         public void OnData (JsonObject data) {
-            Debug.Log (string.Format ("{0} plugin OnData: {1}", GetType ().Name, data.ToJsonPrettyPrintString ()));
+            // Debug.Log (string.Format ("{0} plugin OnData: {1}", GetType ().Name, data.ToJsonPrettyPrintString ()));
             _data = data;
             try {
                 JsonObject response = (JsonObject) JsonNode.ParseJsonString (data["data"]);
@@ -185,7 +185,7 @@ namespace Mopsicus.Plugins {
                 }
                 _data = null;
             } catch (Exception e) {
-                Debug.LogError (string.Format ("{0} plugin OnData error: {1}", GetType ().Name, e.Message));
+                // Debug.LogError (string.Format ("{0} plugin OnData error: {1}", GetType ().Name, e.Message));
             }
         }
 
@@ -193,12 +193,12 @@ namespace Mopsicus.Plugins {
         /// Callback on error
         /// </summary>
         public void OnError (JsonObject data) {
-            Debug.LogError (string.Format ("{0} plugin OnError: {0}", GetType ().Name, data.ToJsonPrettyPrintString ()));
+            // Debug.LogError (string.Format ("{0} plugin OnError: {0}", GetType ().Name, data.ToJsonPrettyPrintString ()));
             _error = data;
             try {
                 _error = null;
             } catch (Exception e) {
-                Debug.LogError (string.Format ("{0} plugin OnError error: {1}", GetType ().Name, e.Message));
+                // Debug.LogError (string.Format ("{0} plugin OnError error: {1}", GetType ().Name, e.Message));
             }
         }
 
@@ -240,7 +240,7 @@ namespace Mopsicus.Plugins {
             data["id"] = id;
             string json = data.ToJsonString ();
 #if UNITY_EDITOR
-            Debug.Log ("MobileInput execute " + json);
+            // Debug.Log ("MobileInput execute " + json);
 #elif UNITY_ANDROID
             using (AndroidJavaClass plugin = new AndroidJavaClass (string.Format (Plugins.ANDROID_CLASS_MASK, _instance.Name))) {
                 plugin.CallStatic ("execute", id, json);

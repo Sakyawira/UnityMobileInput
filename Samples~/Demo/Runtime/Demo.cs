@@ -15,11 +15,11 @@ public class Demo : MonoBehaviour {
 	}
 
 	public void OnEdit (string text) {
-		Debug.LogFormat ("OnEdit action. Text: {0}", text);
+		// Debug.LogFormat ("OnEdit action. Text: {0}", text);
 	}
 
 	public void OnEndEdit (string text) {
-		Debug.LogFormat ("OnEdit action. Text: {0}", text);
+		// Debug.LogFormat ("OnEdit action. Text: {0}", text);
 	}
 
 	public void SetTextData () {
@@ -27,7 +27,7 @@ public class Demo : MonoBehaviour {
 	}
 	
 	void OnShowKeyboard (bool isShow, int height) {
-		Debug.LogFormat ("Keyboad action, show = {0}, height = {1}", isShow, height);
+		// Debug.LogFormat ("Keyboad action, show = {0}, height = {1}", isShow, height);
 	}
 
 }
